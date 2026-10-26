@@ -1,0 +1,17 @@
+# dependencies
+/node_modules
+
+# Next.js build output
+/.next
+/out
+
+# local portable runtime used for verification
+/.runtime
+
+# local environment files
+.env*
+
+# editor and system files
+.DS_Store
+Thumbs.db
+*.log
