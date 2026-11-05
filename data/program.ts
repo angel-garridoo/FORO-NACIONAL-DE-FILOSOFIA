@@ -142,9 +142,6 @@ const mesa9Presentations: Presentation[] = [
   },
 ];
 
-const pendingBlockAssignment =
-  "El documento lista esta mesa en la mañana y en la tarde, pero todavía no distribuye las ponencias entre ambos bloques. Se muestra la lista general de la mesa.";
-
 export const program: DayProgram[] = [
   {
     id: "dia-1",
@@ -569,8 +566,7 @@ export const program: DayProgram[] = [
             title: "Mesa 8: Filosofía de la Existencia y Existencialismo — mañana",
             kind: "mesa",
             moderator: "Jordan, Libni y Franco",
-            note: pendingBlockAssignment,
-            presentations: mesa8Presentations,
+            presentations: mesa8Presentations.slice(0, 5),
           },
           {
             id: "mesa-9-manana",
@@ -599,8 +595,7 @@ export const program: DayProgram[] = [
             title: "Mesa 8: Filosofía de la Existencia y Existencialismo — tarde",
             kind: "mesa",
             moderator: "Jordan, Libni y Franco",
-            note: pendingBlockAssignment,
-            presentations: mesa8Presentations,
+            presentations: mesa8Presentations.slice(5),
           },
           {
             id: "mesa-9-tarde",
