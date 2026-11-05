@@ -83,7 +83,7 @@ function AgendaCard({
       className={`agenda-card agenda-card--${item.kind}${isOpen ? " agenda-card--open" : ""}`}
     >
       <div className="agenda-time">
-        <time>{item.time}</time>
+        {item.time && <time>{item.time}</time>}
         {item.location && (
           <span className="location">
             <PinIcon />
@@ -166,7 +166,7 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow"><span /> 19—20 de noviembre de 2026</p>
           <h1>
-            <span>XX Foro Nacional</span>
+            <span>XXVI Foro Nacional</span>
             <span className="title-last"><span className="title-prefix">de</span> <Mark>Filosofía</Mark></span>
           </h1>
           <p className="hero-intro">
@@ -176,7 +176,7 @@ export default function Home() {
           </p>
         </div>
         <div className="hero-index" aria-label="Información del evento">
-          <div><span>Edición</span><strong>XX</strong></div>
+          <div><span>Edición</span><strong>XXVI</strong></div>
           <div><span>Jornadas</span><strong>02</strong></div>
           <div><span>Programa</span><strong>Filosofía</strong></div>
         </div>
@@ -243,9 +243,9 @@ export default function Home() {
       </section>
 
       <footer>
-        <div className="footer-mark" aria-hidden="true">XX</div>
+        <div className="footer-mark" aria-hidden="true">XXVI</div>
         <div>
-          <p>XX Foro Nacional de Filosofía</p>
+          <p>XXVI Foro Nacional de Filosofía</p>
           <span>Universidad del Atlántico</span>
         </div>
         <div className="footer-program">Facultad de Ciencias Humanas<br />Programa de Filosofía</div>

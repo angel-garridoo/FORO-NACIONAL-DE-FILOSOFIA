@@ -1,4 +1,4 @@
-# XX Foro Nacional de Filosofía
+# XXVI Foro Nacional de Filosofía
 
 Sitio web en Next.js para consultar la programación del foro y desplegar las ponencias de cada mesa.
 

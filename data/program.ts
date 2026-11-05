@@ -11,7 +11,7 @@ export type SubEvent = {
 
 export type AgendaItem = {
   id: string;
-  time: string;
+  time?: string;
   location?: string;
   title: string;
   kind: "mesa" | "central" | "break" | "logistics" | "closing";
@@ -32,6 +32,119 @@ export type DayProgram = {
   }[];
 };
 
+const mesa8Presentations: Presentation[] = [
+  {
+    title:
+      "Del colonialismo al discurso sobre la migración: actualidad de la crítica sartreana de la representación del Otro",
+    speakers: "Yazmin Guevara y Farid Ricardo",
+  },
+  {
+    title:
+      "Identidad y libertad en la cuestión judía y palestina: una aproximación filosófica desde Jean Paul Sartre",
+    speakers: "Génesis Carolina Tobías Meneses",
+    affiliation:
+      "Semillero Phronesis: Razón Práctica. Estudiante del programa de Filosofía, Universidad del Atlántico.",
+  },
+  {
+    title:
+      "Colonialismo, identidad y libertad: una aproximación filosófica desde Jean Paul Sartre y Albert Memmi",
+    speakers: "Grace Wehdeking Rey",
+    affiliation:
+      "Semillero Phronesis: Razón Práctica. Estudiante del programa de Filosofía, Universidad del Atlántico.",
+  },
+  {
+    title:
+      "Vigilancia sin mirada: objetivación algorítmica y los límites del ‘regard’ (mirada) en la fenomenología sartreana",
+    speakers: "Luisa Fernanda Escorcia Julio",
+  },
+  {
+    title:
+      "Prácticas de estabilización conversacional como articulación entre sensus communis y medición comunitaria",
+    speakers: "Jhonan Jacob Ramírez Murillo",
+  },
+  {
+    title:
+      "Tipología del inconsciente y fenomenología de la conciencia: tensiones ontológicas sobre la emancipación del sujeto",
+    speakers: "Jhon E. Gutiérrez Cantero",
+  },
+  {
+    title:
+      "Afectividad, voluntad y poder en Schopenhauer y Nietzsche: una lectura desde la fenomenología material de la vida de Michel Henry",
+    speakers: "Juan Sebastián Ballen Rodríguez",
+  },
+  {
+    title:
+      "La angustia como método: el vacío kierkegaardiano en la escritura de Alejandra Pizarnik",
+    speakers: "Yoaldris Inés Luna Fábregas",
+  },
+  {
+    title:
+      "Crisis de identidad del sujeto en la obra La metamorfosis: alienación e intersubjetividad en Sartre",
+    speakers: "María José Jiménez Carreño",
+  },
+];
+
+const mesa9Presentations: Presentation[] = [
+  {
+    title: "Ecuación analítica de la ética",
+    speakers: "Leopoldo Casiani",
+  },
+  {
+    title:
+      "¿Quién merece ser reconocido como humano? Dignidad y precaridad: una lectura de la película The Elephant Man desde Judith Butler y la bioética",
+    speakers: "Libni Barraza Merchán",
+  },
+  {
+    title: "Desdemocratización. Presentación de un problema",
+    speakers: "Yerson Yismendy Carrillo Ardila",
+  },
+  {
+    title:
+      "Pensamiento crítico y alienación social: un análisis del concepto individualismo y masas en Nietzsche y Hannah Arendt",
+    speakers: "Nataly De Moya",
+  },
+  {
+    title:
+      "Entre el Aquinate y los algoritmos: pertinencia de los fundamentos éticos tomistas al debate filosófico contemporáneo sobre la agencia moral en la inteligencia artificial",
+    speakers: "Luis Manuel Fontalvo Thomas",
+  },
+  {
+    title: "Conversaciones entre Heidegger y Marcuse: hacía una visión política de la época",
+    speakers: "Jairo Julio García Sosa",
+  },
+  {
+    title: "Supresión del dolor dentro de la clínica: su impacto en la palabra y dignidad del enfermo",
+    speakers: "Roxana López López",
+  },
+  {
+    title: "Biolinguistica y E topías",
+    speakers: "Jairo Gutiérrez Bossa",
+  },
+  {
+    title: "El ser humano como demonio de la democracia",
+    speakers: "Jorge Eduardo Negrete Crisóstomo",
+  },
+  {
+    title:
+      "El sujeto político y los límites de la autonomía moral: religión, discursos neoreligiosos y heteronomía",
+    speakers: "Santiago Orellano Fabra",
+  },
+  {
+    title:
+      "El a priori antropológico: testimonio y ruptura epistémica de las madres de Soacha en los falsos positivos 2008-2009 de Colombia",
+    speakers: "Sharon Dayana Villa Gutiérrez",
+  },
+  {
+    title:
+      "¿Vivir para la filosofía o de la filosofía? La búsqueda de la verdad frente a la filosofía universitaria en Arthur Schopenhauer",
+    speakers: "Alejandro Elías Rincón Jiménez",
+    affiliation: "Filosofía de la educación.",
+  },
+];
+
+const pendingBlockAssignment =
+  "El documento lista esta mesa en la mañana y en la tarde, pero todavía no distribuye las ponencias entre ambos bloques. Se muestra la lista general de la mesa.";
+
 export const program: DayProgram[] = [
   {
     id: "dia-1",
@@ -43,12 +156,13 @@ export const program: DayProgram[] = [
         label: "Acceso",
         items: [
           {
-            id: "registro",
+            id: "registro-dia-1",
             time: "07:00 – 08:00 AM",
-            location: "Entrada Principal",
-            title: "Mesa de inscripción y registro",
+            location: "Lobby",
+            title: "Mesa de inscripción",
             kind: "logistics",
-            note: "Encargados: Benjamín Martínez, Laura Marchena, Andrea García, Lesly Agambula",
+            note:
+              "Encargados: Benjamín Martínez, Laura Marchena, Andrea García y Maria Nuñes.",
           },
         ],
       },
@@ -56,113 +170,132 @@ export const program: DayProgram[] = [
         label: "Jornada de la mañana",
         items: [
           {
-            id: "apertura-mesa-central-1",
-            time: "08:00 – 10:15 AM",
+            id: "mesa-central-1",
+            time: "08:00 – 10:30 AM",
             location: "Salón Múltiple 2",
-            title: "Apertura del Foro y Mesa Central 1",
+            title: "Mesa Central 1",
             kind: "central",
+            moderator: "Elianys y Prof. Arturo",
             subEvents: [
-              { time: "08:00 – 08:30 AM", text: "Apertura del Foro" },
               {
-                time: "08:30 – 10:15 AM",
-                text: "Palabras de bienvenida e instalación — Numas Gil Olivera (Decana de Ciencias Humanas), Germán Giller, Luis Eduardo Gamba (Universidad del Atlántico)",
+                time: "08:00 – 08:30 AM",
+                text:
+                  "Palabras de apertura — Numas Gil Olivera, Decana de la Facultad (nombre no indicado), Arturo Cardozo y Elianys Ramos.",
+              },
+              {
+                time: "08:30 – 09:30 AM",
+                text:
+                  "«Existencia y cuidado del alma: Patočka —de Husserl y Heidegger—» — German Giller.",
+              },
+              {
+                time: "09:30 – 10:30 AM",
+                text: "Luis Eduardo Gamba — título de la ponencia no indicado en el documento.",
               },
             ],
           },
           {
             id: "receso-dia-1-manana",
-            time: "10:15 – 10:30 AM",
-            location: "Hall Central",
-            title: "Coffee Break / Receso",
+            title: "Coffee break",
             kind: "break",
           },
           {
             id: "mesa-1",
-            time: "10:30 – 12:00 PM (120 minutos)",
+            time: "10:30 AM – 12:30 PM",
             location: "Teatrino 1",
-            title: "Mesa 1: Filosofía de las Ciencias, Tecnología e Inteligencia Artificial",
+            title: "Mesa 1: Filosofía de la Tecnología, Inteligencia Artificial y Ciencias",
             kind: "mesa",
-            moderator: "Luis, Kener y Prof. Roger (Apertura del profesor Bermúdez y profesor Roger)",
+            moderator: "Julian Geronimo y Laura Marchera",
             presentations: [
               {
-                title: "Antropomorfismo y libre albedrio. Problemas epistemologicos en la atribucion de mente y agencia",
+                title:
+                  "Antropomorfismo y libre albedrio. Problemas epistemologicos en la atribucion de mente y agencia",
                 speakers: "Andrea García y Daniel Muñoz",
-                affiliation: "Universidad del Atlántico",
               },
               {
                 title: "¿Es fiable el cerebro para ser juez de sí mismo?: una perspectiva Neuroética",
                 speakers: "Carmelo David Santiago Moreno",
-                affiliation: "Universidad del Atlántico",
               },
               {
-                title: "¿Puede la inteligencia artificial tener un \"yo\"? Una aproximación filosófica a la identidad, la memoria y la autoconciencia artificial",
+                title:
+                  "¿Puede la inteligencia artificial tener un \"yo\"? Una aproximación filosófica a la identidad, la memoria y la autoconciencia artificial",
                 speakers: "Natalia Lucía Torres Polo",
-                affiliation: "Universidad del Atlántico",
               },
               {
-                title: "¿Qué significa amar en tiempos de afecto artificial? Dependencia emocional, alteridad y vínculos en la sociedad contemporánea",
+                title:
+                  "¿Qué significa amar en tiempos de afecto artificial? Dependencia emocional, alteridad y vínculos en la sociedad contemporánea",
                 speakers: "Lauren Sofía Bohórquez Orozco",
+                affiliation: "Filosofía de la tecnología e inteligencia artificial.",
               },
             ],
           },
           {
-            id: "mesa-3",
-            time: "10:30 – 12:00 PM",
-            location: "Salón S.P1",
-            title: "Mesa 3: Filosofía del Suicidio, Pesimismo y Literatura",
+            id: "mesa-2",
+            time: "10:30 AM – 12:30 PM",
+            location: "Salón Posgrados 1",
+            title: "Mesa 2: Filosofía del Suicidio, Pesimismo y Literatura",
             kind: "mesa",
-            moderator: "Johan, Luisa, Cristian y Valentina",
+            moderator: "Johan Palmes",
             presentations: [
               {
-                title: "La muerte en libertad. Nietzsche frente al suicidio como afirmación y como decadencia",
+                title:
+                  "La muerte en libertad. Nietzsche frente al suicidio como afirmación y como decadencia",
                 speakers: "Sebastián Alberto Vallejos Contreras",
-                affiliation: "Pontificia Universidad Católica de Valparaíso",
+                affiliation:
+                  "Estudiante del programa de Doctorado en Filosofía de la Pontificia Universidad Católica de Valparaíso.",
               },
               {
                 title: "Exámenes sobre la noción de Espejo en Arthur Schopenhauer",
-                speakers: "Jorge Eduardo Negrete Crisóstomo",
+                speakers: "Jorge Eduardo Negrete",
               },
               {
                 title: "Lenguaje: ¿asesino del suicidio?",
                 speakers: "Josep Josué Orozco Suárez",
               },
               {
-                title: "Distopía y ontología de la imagen técnica: Orwell, Bradbury y Bazterrica a la luz del concepto de \"poetizar\" de Gustavo Bueno",
+                title:
+                  "Distopía y ontología de la imagen técnica: Orwell, Bradbury y Bazterrica a la luz del concepto de \"poetizar\" de Gustavo Bueno",
                 speakers: "Cristian David Romero Chamorro",
-                affiliation: "Universidad del Atlántico - Semillero Homeomerías",
+                affiliation:
+                  "Estudiante de Filosofía y de Humanidades y Lengua Castellana de la Universidad del Atlántico. Miembro del Semillero Homeomerías, adscrito al Grupo de Investigación Intellectus Graecus Latinus.",
+              },
+              {
+                title: "Análisis del pensamiento pesimista de Emil Cioran: consideraciones sobre el suicidio",
+                speakers: "María Camila Núñez Ureche",
               },
             ],
           },
           {
-            id: "mesa-4",
-            time: "10:30 – 12:00 PM",
-            location: "Salón S.P2",
-            title: "Mesa 4: Filosofía Feminista, de Género, Arte y Estética",
+            id: "mesa-3",
+            time: "10:30 AM – 12:30 PM",
+            location: "Teatrino 2",
+            title: "Mesa 3: Filosofía Latinoamericana, Caribe Colombiano y Religión",
             kind: "mesa",
-            moderator: "Benjamín, Alba, Robert y Libni",
+            moderator: "Aldair Catalán y Brian Castro",
             presentations: [
               {
-                title: "Resignificación de los imaginarios políticos de la violencia contra la mujer: consideraciones sobre el carácter performativo del discurso político de la mujer indígena Mokaná en el territorio del municipio de Galapa Atlántico",
-                speakers: "Laury Ayala Marín",
+                title: "Ruinas de agua y progreso. Una lectura de Walter Benjamin en La Mojana",
+                speakers: "José Vega",
               },
               {
-                title: "Consideraciones acerca de la Muerte y el Reconocimiento Público desde la Poesía de Emily Dickinson",
-                speakers: "Sarai Santamaría Cuesta",
+                title:
+                  "Estanislao Zuleta: la trascendencia de la dificultad en la ilusión de la felicidad permanente",
+                speakers: "Aldair David Catalán Arrieta",
               },
               {
-                title: "La decaída del deseo: La metafísica de la música en Schopenhauer a través del Preludio en Mi menor de Chopin",
-                speakers: "Enmanuel de Jesús Amaranto Chávez",
+                title: "El valor de la experiencia en el mundo árabe",
+                speakers: "Fidel Llinás Zurita",
               },
               {
-                title: "Arte, técnica y revolución: la articulación entre estética y política en el pensamiento de Walter Benjamin",
-                speakers: "Sebastián de Jesús Toro Chacón",
+                title:
+                  "Más allá del concepto: fenomenología de la religión, donación y los límites de la racionalización en Jean-Luc Marion. Una aproximación al problema de Dios, la teología y la relación entre filosofía y religión",
+                speakers: "Laura Vanessa Marchena Almarales",
               },
             ],
           },
           {
             id: "almuerzo-dia-1",
-            time: "12:00 – 13:30 PM",
-            title: "Almuerzo libre",
+            time: "12:30 – 02:00 PM",
+            title: "Almuerzo",
             kind: "break",
           },
         ],
@@ -171,59 +304,25 @@ export const program: DayProgram[] = [
         label: "Jornada de la tarde",
         items: [
           {
-            id: "mesa-5",
-            time: "13:30 – 15:30 PM",
+            id: "mesa-4",
+            time: "02:00 – 04:00 PM",
             location: "Teatrino 1",
-            title: "Mesa 5: Filosofía Latinoamericana y en el Caribe Colombiano",
+            title: "Mesa 4: Semillero Escolar",
             kind: "mesa",
-            moderator: "Aldair Catalán y Carmelo (Apertura del profesor Eucilio)",
+            moderator: "Natalia Torres y Maria Jimenez",
             presentations: [
               {
-                title: "\"Ruinas de agua y progreso. Una lectura de Walter Benjamin en La Mojana\"",
-                speakers: "José Vega",
-              },
-              {
-                title: "\"Estanislao Zuleta: la trascendencia de la dificultad en la ilusión de la felicidad permanente\"",
-                speakers: "Aldair David Catalán Arrieta",
-              },
-            ],
-          },
-          {
-            id: "mesa-6",
-            time: "13:30 – 15:30 PM",
-            location: "Teatrino 2",
-            title: "Mesa 6: Filosofía de la Religión",
-            kind: "mesa",
-            moderator: "Julián y Cristian Maldonado",
-            presentations: [
-              {
-                title: "El valor de la experiencia en el mundo árabe",
-                speakers: "Prof. Fidel",
-              },
-              {
-                title: "Más allá del concepto: fenomenología de la religión, donación y los límites de la racionalización en jean-luc marion. Una aproximación al problema de dios, la teología y la relación entre filosofía y religión",
-                speakers: "Laura Vanessa Marchena Almarales",
-              },
-            ],
-          },
-          {
-            id: "mesa-7",
-            time: "13:30 – 15:30 PM",
-            location: "Salón S.P1",
-            title: "Mesa 7: Semillero Escolar",
-            kind: "mesa",
-            moderator: "Natalia Torres",
-            presentations: [
-              {
-                title: "Gobernar con justicia o por conveniencia: la política frente al desafío ético de kant",
+                title:
+                  "Gobernar con justicia o por conveniencia: la política frente al desafío ético de Kant",
                 speakers: "Valeri Calderón, Akemy Soto y Olianys Noriega",
               },
               {
-                title: "Cuando el poder deja de pensar: abuso, violencia, banalidad del mal y responsabilidad política en el orden mundial contemporáneo. Una lectura crítica desde la perspectiva de Hannah Arendt, Michel Foucault y Noam Chomsky",
-                speakers: "Stephania Pérez Vera",
+                title:
+                  "Cuando el poder deja de pensar: abuso, violencia, banalidad del mal y responsabilidad política en el orden mundial contemporáneo. Una lectura crítica desde la perspectiva de Hannah Arendt, Michel Foucault y Noam Chomsky",
+                speakers: "Stephania Perez Vera",
               },
               {
-                title: "La arquitectura del poder: ¿Cómo la dominación sostiene la desigualdad?",
+                title: "La arquitectura del poder: ¿Como la dominación sostiene la desigualdad?",
                 speakers: "Joselyne del Toro Gutiérrez y Massielly Paola Medrano Aguilar",
               },
               {
@@ -232,44 +331,79 @@ export const program: DayProgram[] = [
               },
               {
                 title: "¿Puedo pertenecer sin dejar de ser yo? Identidad, autenticidad y libertad juvenil",
-                speakers: "Rafael Antonio Velandia Páez y Mariángel Monsalvo Amarís",
+                speakers: "Rafael Antonio Velandia Paez y Mariangel Monsalvo Amaris",
               },
               {
-                title: "La violencia barrista: ¿una expresión de la naturaleza humana o el resultado de una sociedad que normaliza la deshumanización?",
+                title:
+                  "La violencia barrista: ¿una expresión de la naturaleza humana o el resultado de una sociedad que normaliza la deshumanización?",
                 speakers: "Andrea Carolina Quintero Ardila y Ana Sofía Rangel Lindado",
               },
             ],
           },
           {
-            id: "mesa-8",
-            time: "13:30 – 15:30 PM",
-            location: "Salón S.P2",
-            title: "Mesa 8: Investigación, Posgrados y Maestría",
+            id: "mesa-5",
+            time: "02:00 – 04:00 PM",
+            location: "Salón Posgrados 1",
+            title: "Mesa 5: Filosofía Feminista, de Género, Arte y Estética",
             kind: "mesa",
-            moderator: "Por definir",
+            moderator: "Cristian Romero y Valentina",
             presentations: [
               {
-                title: "Develar el Anti-Humanismo: Lo Contra-humano de lo Humano",
+                title:
+                  "Resignificación de los imaginarios políticos de la violencia contra la mujer: consideraciones sobre el carácter performativo del discurso político de la mujer indígena Mokaná en el territorio del municipio de Galapa Atlántico",
+                speakers: "Laury Ayala Marin",
+                affiliation: "Filosofía feminista y de género.",
+              },
+              {
+                title: "Consideraciones acerca de la Muerte y el Reconocimiento Público desde la Poesía de Emily Dickinson",
+                speakers: "Sarai Santamaría Cuesta",
+              },
+              {
+                title:
+                  "La decaída del deseo: La metafísica de la música en Schopenhauer a través del Preludio en Mi menor de Chopin",
+                speakers: "Enmanuel de Jesús Amaranto Chavez",
+              },
+              {
+                title: "Arte, técnica y revolución: la articulación entre estética y política en el pensamiento de Walter Benjamin",
+                speakers: "Sebastián de Jesús Toro Chacón",
+              },
+            ],
+          },
+          {
+            id: "mesa-6",
+            time: "02:00 – 04:00 PM",
+            location: "Salón Múltiple 2",
+            title: "Mesa 6: Investigación y Maestría",
+            kind: "mesa",
+            moderator: "Prof. Roger y Franco",
+            presentations: [
+              {
+                title: "Develar el Anti Humanismo: Lo Contra humano de lo Humano",
                 speakers: "Johan Camilo Méndez Moreno",
-                affiliation: "Maestría en Filosofía",
+                affiliation: "Estudiante de la Maestría en Filosofía de la Universidad del Atlántico.",
               },
               {
                 title: "Hacia una infancia mayor: elementos y mecanismo de una educación pasional",
                 speakers: "Jair España Galán",
+                affiliation:
+                  "Filósofo y doctorando en Ciencias de la Educación de la Universidad del Atlántico. Magíster en Desarrollo Humano de FLACSO, Argentina.",
               },
               {
                 title: "La modernidad o la imagen del mundo a partir de Heidegger y Habermas",
-                speakers: "Prof. Luis Eugenio Ribón Pérez",
+                speakers: "Luis Eugenio Ribón Pérez",
+                affiliation:
+                  "Mg. en Filosofía Latinoamericana, Filosofía de la Ciencia y Teoría y Técnicas en Métodos de Investigación. Doctor en Ciencias de la Educación y en Filosofía Social.",
               },
               {
-                title: "Habitar el acontecimiento: Ontología del arte popular caribeño a partir de los cuadros vivos de galeras, sucre",
+                title:
+                  "Habitar el acontecimiento: ontología del arte popular caribeño a partir de los cuadros vivos de Galeras, Sucre",
                 speakers: "Rafael David Galván Zabaleta",
-                affiliation: "Maestría en Filosofía",
+                affiliation: "Estudiante de la Maestría en Filosofía, Universidad del Atlántico.",
               },
               {
                 title: "La clase de filosofía como encuentro formativo en el aula",
                 speakers: "Omaira Barreto Chica",
-                affiliation: "Maestría en Filosofía",
+                affiliation: "Universidad del Atlántico — Maestría en Filosofía.",
               },
               {
                 title: "La negatividad del sujeto como fundamento de lo político en Žižek",
@@ -283,23 +417,20 @@ export const program: DayProgram[] = [
           },
           {
             id: "receso-dia-1-tarde",
-            time: "15:30 – 16:00 PM",
-            location: "Hall Central",
-            title: "Coffee Break / Receso",
+            title: "Coffee break",
             kind: "break",
           },
           {
-            id: "cierre-dia-1",
-            time: "16:00 – 17:30 PM",
+            id: "mesa-central-2",
+            time: "04:30 – 06:30 PM",
             location: "Salón Múltiple 2",
-            title: "Mesa Central de Cierre (Día 1)",
+            title: "Mesa Central 2: Presentación de libro",
             kind: "central",
-            moderator: "Comité Organizador",
+            moderator: "Elianys y Prof. Arturo",
             presentations: [
               {
-                title: "Presentación de Libro: Historia de la filosofía en el caribe colombiano",
-                speakers: "Prof. Arteta",
-                affiliation: "Universidad del Atlántico",
+                title: "Presentación de libro",
+                speakers: "Arteta",
               },
             ],
           },
@@ -314,51 +445,79 @@ export const program: DayProgram[] = [
     fullDate: "20 de noviembre de 2026",
     sections: [
       {
+        label: "Acceso",
+        items: [
+          {
+            id: "registro-dia-2",
+            time: "07:00 – 08:00 AM",
+            location: "Lobby",
+            title: "Mesa de inscripción",
+            kind: "logistics",
+            note:
+              "Encargados: Benjamín Martínez, Laura Marchena, Andrea García y Maria Nuñes.",
+          },
+        ],
+      },
+      {
         label: "Jornada de la mañana",
         items: [
           {
-            id: "mesa-central-2",
+            id: "mesa-central-3",
             time: "08:30 – 10:30 AM",
             location: "Salón Múltiple 2",
-            title: "Mesa Central 2",
+            title: "Mesa Central 3",
             kind: "central",
-            moderator: "Por definir",
-            note: "Ponencia Central 2: Prof. Eduardo Contreras, Prof. Roche, Prof. Roger + Ponente Invitado",
+            moderator: "Elianys y Prof. Arturo",
+            note:
+              "El cuadro general indica 8:30–10:30 AM; el detalle de las intervenciones consigna actividades entre 8:00 y 10:20 AM.",
+            subEvents: [
+              {
+                time: "08:00 – 09:00 AM",
+                text: "Espacio libre — Arturo Cardozo.",
+              },
+              {
+                time: "09:00 – 09:40 AM",
+                text: "Enfermedad y transformación personal: una perspectiva fenomenológica — Andrés Contreras.",
+              },
+              {
+                time: "09:40 – 10:20 AM",
+                text: "Contra la celeridad: una lectura desde Nietzsche y Heidegger — Alfredo Rocha.",
+              },
+            ],
           },
           {
             id: "receso-dia-2-manana",
-            time: "10:30 – 10:45 AM",
-            location: "Hall Central",
-            title: "Coffee Break / Receso",
+            title: "Coffee break",
             kind: "break",
           },
           {
-            id: "mesa-9",
-            time: "10:45 – 12:30 PM",
-            location: "Teatrino 2",
-            title: "Mesa 9: Fenomenología y Hermenéutica (Reemplaza Trabajos Pendientes)",
+            id: "mesa-7",
+            time: "10:30 AM – 12:30 PM",
+            location: "Salón Múltiple 2",
+            title: "Mesa 7: Fenomenología y Hermenéutica",
             kind: "mesa",
-            moderator: "Mirian (Apertura: Eduardo Contreras y Rodolfo Wenger)",
+            moderator: "Mirian, Brinigt y Gissel",
             presentations: [
               {
                 title: "La grieta del Absurdo: Distinción fenomenológica entre Jean-Paul Sartre y Albert Camus",
                 speakers: "Elianys Carolina Ramos Ramos",
               },
               {
-                title: "Una mirada Neurofenomenológica al problema de la adicción",
+                title: "Una mirada neurofenomenológica al problema de la adicción",
                 speakers: "Johana Valentina Campo Blanco",
               },
               {
                 title: "La casa y los espacios habitados: una propuesta fenomenológica",
-                speakers: "Pedro José Silva Valencia",
-                affiliation: "Universidad del Cauca / Universidad de Caldas",
+                speakers: "José Silva Valencia",
               },
               {
-                title: "Vigilancia sin mirada: objetivación algorítmica y los límites del \"regard\" (mirada) en la fenomenología sartreana",
+                title:
+                  "Vigilancia sin mirada: objetivación algorítmica y los límites del ‘regard’ (mirada) en la fenomenología sartreana",
                 speakers: "Roberto Certain Ruiz",
               },
               {
-                title: "Prácticas de estabilización conversacional como articulación entre sensus communis y medición comunitaria",
+                title:
+                  "Prácticas de estabilización conversacional como articulación entre sensus communis y medición comunitaria",
                 speakers: "Jhonan Jacob Ramírez Murillo",
               },
               {
@@ -366,68 +525,39 @@ export const program: DayProgram[] = [
                 speakers: "Juan Manuel Hernández Aguilar",
               },
               {
-                title: "Percepción, cuerpo, y carne: la deuda pendiente de Merleau-Ponty consigo mismo",
-                speakers: "Julián Gerónimo",
+                title: "Percepción, cuerpo, y carne: la deuda pendiente de Merleau Ponty consigo mismo",
+                speakers: "Julian Geronimo",
               },
               {
                 title: "El valor de lo santo en la axiología de Max Scheler: universalidad y portador absoluto",
-                speakers: "Yen Lucía Germán Meza",
+                speakers: "Yen Lucia German Meza",
               },
             ],
           },
           {
-            id: "mesa-2-parte-1",
-            time: "10:45 – 12:30 PM",
-            location: "Salón S.P2",
-            title: "Mesa 2 (Parte I): Filosofía Política y Ética",
+            id: "mesa-8-manana",
+            time: "10:30 AM – 12:30 PM",
+            location: "Teatrino 2",
+            title: "Mesa 8: Filosofía de la Existencia y Existencialismo — mañana",
             kind: "mesa",
-            moderator: "Julián y Cristian Maldonado (Apertura del profesor Ribón)",
-            presentations: [
-              {
-                title: "Ecuación analítica de la ética",
-                speakers: "Leopoldo Casiani",
-                affiliation: "Universidad del Atlántico",
-              },
-              {
-                title: "¿Quién merece ser reconocido como humano? Dignidad y precaridad: una lectura de la película The Elephant Man desde Judith Butler y la bioética",
-                speakers: "Libni Barraza Merchán",
-              },
-              {
-                title: "Desdemocratización. Presentación de un problema",
-                speakers: "Yerson Yismendy Carrillo Ardila",
-              },
-              {
-                title: "Pensamiento Crítico y alienación social: un análisis del concepto individualismo y masas en Nietzsche y Hannah Arendt",
-                speakers: "Nataly De Moya",
-              },
-              {
-                title: "Entre el Aquinate y los algoritmos: pertinencia de los fundamentos éticos tomistas al debate filosófico contemporáneo sobre la agencia moral en la inteligencia artificial",
-                speakers: "Luis Manuel Fontalvo Thomas",
-              },
-              {
-                title: "Conversaciones entre Heidegger y Marcuse: Hacía una visión política de la época",
-                speakers: "Jairo Julio García Sosa",
-              },
-            ],
+            moderator: "Jordan, Libni y Franco",
+            note: pendingBlockAssignment,
+            presentations: mesa8Presentations,
           },
           {
-            id: "mesa-10",
-            time: "10:45 – 12:30 PM",
-            location: "Salón S.P1",
-            title: "Mesa 10: Filosofía de la Educación",
+            id: "mesa-9-manana",
+            time: "10:30 AM – 12:30 PM",
+            location: "Teatrino 1",
+            title: "Mesa 9: Política, Ética y Filosofía de la Educación — mañana",
             kind: "mesa",
-            moderator: "Russell",
-            presentations: [
-              {
-                title: "¿Vivir para la filosofía de la filosofía? La búsqueda de la verdad frente a la filosofía universitaria en Arthur Schopenhauer",
-                speakers: "Jhon E. Gutiérrez Cantero y Juan Sebastián Ballen",
-              },
-            ],
+            moderator: "Aldair Catalán y Brian Castro",
+            note: pendingBlockAssignment,
+            presentations: mesa9Presentations,
           },
           {
             id: "almuerzo-dia-2",
-            time: "12:30 – 14:00 PM",
-            title: "Almuerzo libre",
+            time: "12:30 – 02:00 PM",
+            title: "Almuerzo",
             kind: "break",
           },
         ],
@@ -436,99 +566,43 @@ export const program: DayProgram[] = [
         label: "Jornada de la tarde",
         items: [
           {
-            id: "mesa-2-parte-2",
-            time: "14:00 – 16:00 PM",
-            location: "Salón S.P2",
-            title: "Mesa 2 (Parte II): Filosofía Política y Ética",
-            kind: "mesa",
-            moderator: "Julián y Cristian Maldonado",
-            presentations: [
-              {
-                title: "Supresión del dolor dentro de la clínica: Su impacto en la palabra y dignidad del enfermo",
-                speakers: "Roxana López López",
-              },
-              {
-                title: "Biolinguistica y E topías",
-                speakers: "Jairo Gutiérrez Bossa",
-              },
-              {
-                title: "El ser humano como demonio de la democracia",
-                speakers: "Jorge Eduardo Negrete Crisóstomo",
-              },
-              {
-                title: "El sujeto político y los límites de la autonomía moral: religión, discursos neoreligiosos y heteronomía",
-                speakers: "Santiago Orellano Fabra",
-              },
-              {
-                title: "El a priori antropológico: testimonio y ruptura epistémica de las madres de Soacha en los falsos positivos 2008-2009 de Colombia",
-                speakers: "Sharon Dayana Villa Gutiérrez",
-              },
-            ],
-          },
-          {
-            id: "mesa-12",
-            time: "14:00 – 16:00 PM",
+            id: "mesa-8-tarde",
+            time: "02:00 – 04:00 PM",
             location: "Teatrino 1",
-            title: "Mesa 12: Filosofía de la Existencia y Existencialismo",
+            title: "Mesa 8: Filosofía de la Existencia y Existencialismo — tarde",
             kind: "mesa",
-            moderator: "Jordan y Josep",
-            presentations: [
-              {
-                title: "Del colonialismo al discurso sobre la migración: actualidad de la crítica sartreana de la representación del Otro",
-                speakers: "Yazmin Guevara y Farid Ricardo",
-              },
-              {
-                title: "Identidad y libertad en la cuestión judía y palestina: una aproximación filosófica desde jean paul sartre",
-                speakers: "Génesis Carolina Tobías Meneses",
-                affiliation: "Universidad del Atlántico - Semillero Phrónesis",
-              },
-              {
-                title: "Colonialismo, identidad y libertad: una aproximación filosófica desde Jean Paul Sartre y Albert Memmi",
-                speakers: "Grace Wehdeking Rey",
-              },
-              {
-                title: "Amor o libertad: el conflicto existencial del amor en la filosofía de sartre",
-                speakers: "Luisa Fernanda Escorcia Julo",
-              },
-              {
-                title: "¿Vivir para la filosofía o de la filosofía? La búsqueda de la verdad frente a la filosofía universitaria en Arthur Schopenhauer",
-                speakers: "Alejandro Elías Rincón Jiménez",
-                affiliation: "Universidad del Atlántico",
-              },
-              {
-                title: "Tipología del inconsciente y fenomenología de la conciencia: Tensiones ontológicas sobre la emancipación del sujeto",
-                speakers: "Rodríguez María",
-              },
-              {
-                title: "Afectividad, voluntad y poder en Schopenhauer y Nietzsche: una lectura desde la fenomenología material de la vida de Michel Henry",
-                speakers: "Maria Camila Núñez Ureche",
-              },
-              {
-                title: "Análisis del pensamiento pesimista de Emil Cioran: consideraciones sobre el suicidio",
-                speakers: "Yoaldris Inés Luna Fábregas",
-              },
-              {
-                title: "La angustia como método: el vacío kierkegaardiano en la escritura de Alejandra Pizarnik",
-                speakers: "Yoaldris Ines Luna Fabregas",
-              },
-              {
-                title: "Análisis del pensamiento pesimista de Emil Cioran: consideraciones sobre el suicidio",
-                speakers: "María Camila Núñez Ureche",
-              },
-              {
-                title: "Crisis de identidad del sujeto en la obra La metamorfosis: alienación e intersubjetividad en Sartre",
-                speakers: "María José Jiménez Carreño",
-              },
-            ],
+            moderator: "Jordan, Libni y Franco",
+            note: pendingBlockAssignment,
+            presentations: mesa8Presentations,
           },
           {
-            id: "clausura-general",
-            time: "16:00 – 17:00 PM",
+            id: "mesa-9-tarde",
+            time: "02:00 – 04:00 PM",
+            location: "Teatrino 2",
+            title: "Mesa 9: Política, Ética y Filosofía de la Educación — tarde",
+            kind: "mesa",
+            moderator: "Andrea García, Rober y Russel",
+            note: pendingBlockAssignment,
+            presentations: mesa9Presentations,
+          },
+          {
+            id: "receso-dia-2-tarde",
+            title: "Coffee break",
+            kind: "break",
+          },
+          {
+            id: "obra-de-teatro",
+            time: "04:30 – 06:30 PM",
             location: "Salón Múltiple 2",
-            title: "Clausura General",
+            title: "Obra de teatro",
             kind: "closing",
-            moderator: "Por definir",
-            note: "Cierre del XX Foro Nacional de Filosofía (Obra de teatro)",
+            moderator: "Elianys y Prof. Arturo",
+            presentations: [
+              {
+                title: "Obra de teatro",
+                speakers: "Estudiantes de Bellas Artes",
+              },
+            ],
           },
         ],
       },
