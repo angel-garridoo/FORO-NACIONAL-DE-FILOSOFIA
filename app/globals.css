@@ -1,16 +1,16 @@
 :root {
-  --blue-950: #061b35;
-  --blue-900: #092b55;
-  --blue-800: #0b3d78;
-  --blue-700: #0e55a4;
-  --blue-100: #dceafd;
-  --gold: #f5c518;
-  --red: #d6403a;
-  --ink: #10233b;
+  --blue: #081e83;
+  --orange: #cc4e00;
+  --blue-950: var(--blue);
+  --blue-900: var(--blue);
+  --blue-800: var(--blue);
+  --blue-700: var(--blue);
+  --blue-100: var(--white);
+  --ink: var(--blue);
   --muted: #5d6c7e;
-  --paper: #f5f3ed;
+  --paper: #ffffff;
   --white: #ffffff;
-  --line: #d9dee5;
+  --line: #d9deea;
 }
 
 * { box-sizing: border-box; }
@@ -29,7 +29,7 @@ button, a { font: inherit; }
 button { color: inherit; }
 a { color: inherit; text-decoration: none; }
 
-::selection { color: var(--blue-950); background: var(--gold); }
+::selection { color: var(--white); background: var(--orange); }
 
 .site-header {
   position: absolute;
@@ -50,9 +50,9 @@ a { color: inherit; text-decoration: none; }
   place-items: center;
   width: 46px;
   height: 46px;
-  border: 1px solid rgba(255,255,255,.55);
+  border: 1px solid var(--orange);
   border-radius: 50%;
-  color: var(--gold);
+  color: var(--white);
   font-weight: 800;
   letter-spacing: -.08em;
 }
@@ -71,7 +71,7 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
   letter-spacing: .1em;
 }
-.header-link span { color: var(--gold); font-size: 1rem; }
+.header-link span { color: var(--orange); font-size: 1rem; }
 
 .hero {
   position: relative;
@@ -80,9 +80,8 @@ a { color: inherit; text-decoration: none; }
   padding: 180px clamp(24px, 7vw, 108px) 92px;
   overflow: hidden;
   color: var(--white);
-  background:
-    radial-gradient(circle at 79% 68%, rgba(31, 102, 176, .38), transparent 31%),
-    linear-gradient(128deg, var(--blue-950) 0%, #07274d 48%, var(--blue-800) 100%);
+  background-color: var(--blue);
+  background-image: radial-gradient(circle at 79% 68%, rgba(255,255,255,.09), transparent 32%);
 }
 
 .hero::before {
@@ -90,9 +89,9 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   top: 0;
   right: 0;
-  width: 8px;
+  width: 7px;
   height: 100%;
-  background: linear-gradient(to bottom, var(--gold) 0 52%, var(--red) 52% 100%);
+  background: var(--orange);
 }
 
 .hero::after {
@@ -133,9 +132,9 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
   letter-spacing: .16em;
 }
-.eyebrow > span { width: 26px; height: 2px; background: var(--gold); }
+.eyebrow > span { width: 26px; height: 2px; background: var(--orange); }
 .eyebrow--blue { color: var(--blue-700); }
-.eyebrow--blue > span { background: var(--red); }
+.eyebrow--blue > span { background: var(--orange); }
 
 .hero h1 {
   margin: 0;
@@ -147,7 +146,7 @@ a { color: inherit; text-decoration: none; }
 }
 .hero h1 > span { display: block; }
 .hero h1 > span:last-child { padding-left: clamp(0px, 8vw, 140px); }
-.mark { position: relative; font-style: italic; color: var(--gold); }
+.mark { position: relative; font-style: italic; color: var(--white); }
 .mark::after {
   content: "";
   position: absolute;
@@ -155,7 +154,7 @@ a { color: inherit; text-decoration: none; }
   bottom: -.02em;
   left: .08em;
   height: .035em;
-  background: var(--red);
+  background: var(--orange);
   transform: rotate(-1deg);
 }
 .hero-intro {
@@ -204,8 +203,9 @@ a { color: inherit; text-decoration: none; }
   height: 38px;
   border: 1px solid rgba(255,255,255,.25);
   border-radius: 50%;
-  color: var(--gold);
+  color: var(--white);
   font-style: normal;
+  border-color: var(--orange);
 }
 
 .schedule { max-width: 1380px; margin: 0 auto; padding: 112px clamp(24px, 6vw, 90px) 130px; }
@@ -243,7 +243,7 @@ a { color: inherit; text-decoration: none; }
   bottom: 0;
   left: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--gold) 0 68%, var(--red) 68%);
+  background: var(--orange);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform .25s ease;
@@ -263,7 +263,7 @@ a { color: inherit; text-decoration: none; }
 
 .agenda-section { display: grid; grid-template-columns: minmax(180px, .55fr) 1.45fr; border-bottom: 1px solid var(--line); }
 .agenda-section-label { position: relative; padding: 56px 40px 56px 0; }
-.agenda-section-label span { display: block; width: 34px; height: 3px; margin-bottom: 18px; background: var(--gold); }
+.agenda-section-label span { display: block; width: 34px; height: 3px; margin-bottom: 18px; background: var(--orange); }
 .agenda-section-label h2 { margin: 0; font-size: .74rem; line-height: 1.5; text-transform: uppercase; letter-spacing: .13em; }
 .agenda-list { border-left: 1px solid var(--line); }
 
@@ -279,7 +279,7 @@ a { color: inherit; text-decoration: none; }
 .agenda-trigger, .agenda-static { width: 100%; min-height: 116px; padding: 27px 30px; border: 0; background: transparent; text-align: left; }
 .agenda-trigger { display: flex; align-items: center; justify-content: space-between; gap: 28px; cursor: pointer; }
 .agenda-trigger:hover h3 { color: var(--blue-700); }
-.item-type { display: block; margin-bottom: 8px; color: var(--red); font-size: .59rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
+.item-type { display: block; margin-bottom: 8px; color: var(--orange); font-size: .59rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
 .agenda-main h3 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.15rem, 2vw, 1.55rem); font-weight: 400; line-height: 1.25; transition: color .2s ease; }
 .agenda-static > p { margin: 12px 0 0; color: var(--muted); font-size: .78rem; line-height: 1.5; }
 .trigger-action { display: flex; flex: 0 0 auto; align-items: center; gap: 12px; color: var(--blue-700); font-size: .6rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
@@ -313,7 +313,7 @@ footer {
   color: var(--white);
   background: var(--blue-950);
 }
-.footer-mark { display: grid; place-items: center; width: 58px; height: 58px; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; color: var(--gold); font-family: Georgia, "Times New Roman", serif; font-size: 1.15rem; }
+.footer-mark { display: grid; place-items: center; width: 58px; height: 58px; border: 1px solid var(--orange); border-radius: 50%; color: var(--white); font-family: Georgia, "Times New Roman", serif; font-size: 1.15rem; }
 footer p { margin: 0 0 6px; font-family: Georgia, "Times New Roman", serif; font-size: 1.15rem; }
 footer span, .footer-program { color: rgba(255,255,255,.55); font-size: .7rem; line-height: 1.55; }
 .footer-program { text-align: right; }
