@@ -579,8 +579,7 @@ export const program: DayProgram[] = [
             title: "Mesa 9: Política, Ética y Filosofía de la Educación — mañana",
             kind: "mesa",
             moderator: "Aldair Catalán y Brian Castro",
-            note: pendingBlockAssignment,
-            presentations: mesa9Presentations,
+            presentations: mesa9Presentations.slice(0, 6),
           },
           {
             id: "almuerzo-dia-2",
@@ -610,8 +609,7 @@ export const program: DayProgram[] = [
             title: "Mesa 9: Política, Ética y Filosofía de la Educación — tarde",
             kind: "mesa",
             moderator: "Andrea García, Rober y Russel",
-            note: pendingBlockAssignment,
-            presentations: mesa9Presentations,
+            presentations: mesa9Presentations.slice(6),
           },
           {
             id: "receso-dia-2-tarde",
