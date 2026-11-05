@@ -445,6 +445,19 @@ export const program: DayProgram[] = [
               },
             ],
           },
+          {
+            id: "presentacion-libro-dia-1",
+            time: "05:30 – 06:30 PM",
+            location: "Salón Múltiple 2",
+            title: "Mesa de cierre: Presentación de libro",
+            kind: "central",
+            presentations: [
+              {
+                title: "Presentación de libro",
+                speakers: "Prof. Cristóbal Arteta Ripoll",
+              },
+            ],
+          },
         ],
       },
     ],
