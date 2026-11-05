@@ -175,12 +175,11 @@ export const program: DayProgram[] = [
             location: "Salón Múltiple 2",
             title: "Mesa Central 1",
             kind: "central",
-            moderator: "Elianys y Prof. Arturo",
+            moderator: "Prof. Arturo y Elianys Carolina Ramos Ramos",
             subEvents: [
               {
                 time: "08:00 – 08:30 AM",
-                text:
-                  "Palabras de apertura — Numas Gil Olivera, Decana de la Facultad (nombre no indicado), Arturo Cardozo y Elianys Ramos.",
+                text: "Palabras de apertura — Prof. Arturo y Elianys Carolina Ramos Ramos.",
               },
               {
                 time: "08:30 – 09:30 AM",
@@ -206,6 +205,10 @@ export const program: DayProgram[] = [
             kind: "mesa",
             moderator: "Julian Geronimo y Laura Marchera",
             presentations: [
+              {
+                title: "El giro computacional en la Filosofía de las Ciencias siglo XXI",
+                speakers: "Eduardo Bermudez Barrera",
+              },
               {
                 title:
                   "Antropomorfismo y libre albedrio. Problemas epistemologicos en la atribucion de mente y agencia",
@@ -272,6 +275,10 @@ export const program: DayProgram[] = [
             kind: "mesa",
             moderator: "Aldair Catalán y Brian Castro",
             presentations: [
+              {
+                title: "Geografías del poder: imperialismo, filosofía y territorio en América Latina",
+                speakers: "Eleucilio Niebles Reales",
+              },
               {
                 title: "Ruinas de agua y progreso. Una lectura de Walter Benjamin en La Mojana",
                 speakers: "José Vega",
@@ -421,16 +428,20 @@ export const program: DayProgram[] = [
             kind: "break",
           },
           {
-            id: "mesa-central-2",
-            time: "04:30 – 06:30 PM",
+            id: "debate-cierre-dia-1",
+            time: "04:30 – 05:30 PM",
             location: "Salón Múltiple 2",
-            title: "Mesa Central 2: Presentación de libro",
+            title: "Debate de cierre: de lo eidético a la Praxis",
             kind: "central",
-            moderator: "Elianys y Prof. Arturo",
             presentations: [
               {
-                title: "Presentación de libro",
-                speakers: "Arteta",
+                title:
+                  "Kierkegaard lector de Platón: acercamientos y distancias entre filosofía y existencia",
+                speakers: "Sandro Leonel Watts Meza",
+              },
+              {
+                title: "Y sin embargo, la Filosofía no envejece.",
+                speakers: "José Gabriel Coley",
               },
             ],
           },
@@ -498,6 +509,10 @@ export const program: DayProgram[] = [
             kind: "mesa",
             moderator: "Mirian, Brinigt y Gissel",
             presentations: [
+              {
+                title: "¿Es posible una fenomenología de las no-cosas?",
+                speakers: "Rodolfo Wenger C.",
+              },
               {
                 title: "La grieta del Absurdo: Distinción fenomenológica entre Jean-Paul Sartre y Albert Camus",
                 speakers: "Elianys Carolina Ramos Ramos",
