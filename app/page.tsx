@@ -157,6 +157,7 @@ export default function Home() {
       </header>
 
       <section className="hero" id="inicio">
+        <div className="hero-art" aria-hidden="true" />
         <div className="hero-lines" aria-hidden="true">
           <span />
           <span />

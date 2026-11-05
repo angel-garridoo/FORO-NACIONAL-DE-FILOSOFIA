@@ -42,6 +42,7 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   padding: 28px clamp(24px, 5vw, 76px);
   color: var(--white);
+  text-shadow: 0 1px 12px rgba(8,30,131,.48);
 }
 
 .identity { display: flex; align-items: center; gap: 14px; }
@@ -58,7 +59,7 @@ a { color: inherit; text-decoration: none; }
 }
 .identity > span:last-child { display: grid; gap: 3px; }
 .identity strong { font-size: .84rem; letter-spacing: .02em; }
-.identity small { color: rgba(255,255,255,.7); font-size: .66rem; }
+.identity small { color: rgba(255,255,255,.82); font-size: .66rem; }
 
 .header-link {
   display: flex;
@@ -82,6 +83,20 @@ a { color: inherit; text-decoration: none; }
   color: var(--white);
   background-color: var(--blue);
   background-image: radial-gradient(circle at 79% 68%, rgba(255,255,255,.09), transparent 32%);
+}
+
+.hero-art {
+  position: absolute;
+  z-index: 0;
+  inset: 0 auto 0 0;
+  width: 58%;
+  pointer-events: none;
+  background-image:
+    linear-gradient(90deg, rgba(8,30,131,.72) 0%, rgba(8,30,131,.65) 58%, var(--blue) 100%),
+    url("./assets/collage-dada-foro.jpeg");
+  background-position: center;
+  background-size: cover;
+  filter: saturate(.78) contrast(1.04);
 }
 
 .hero::before {
@@ -120,7 +135,7 @@ a { color: inherit; text-decoration: none; }
 .hero-lines span:nth-child(3) { transform: scale(.64) rotate(2deg); }
 .hero-lines span:nth-child(4) { transform: scale(.46) rotate(12deg); }
 
-.hero-copy { position: relative; z-index: 1; align-self: center; width: 100%; min-width: 0; max-width: 970px; }
+.hero-copy { position: relative; z-index: 1; align-self: center; width: 100%; min-width: 0; max-width: 970px; text-shadow: 0 2px 18px rgba(8,30,131,.42); }
 .eyebrow {
   display: flex;
   align-items: center;
@@ -161,7 +176,7 @@ a { color: inherit; text-decoration: none; }
   width: min(100%, 490px);
   max-width: 490px;
   margin: 44px 0 0 clamp(0px, 8vw, 140px);
-  color: rgba(255,255,255,.7);
+  color: rgba(255,255,255,.9);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.25rem;
   line-height: 1.55;
@@ -320,6 +335,13 @@ footer span, .footer-program { color: rgba(255,255,255,.55); font-size: .7rem; l
 
 @media (max-width: 900px) {
   .hero { min-height: 690px; padding-top: 160px; }
+  .hero-art {
+    width: 100%;
+    background-image:
+      linear-gradient(180deg, rgba(8,30,131,.76) 0%, rgba(8,30,131,.68) 48%, rgba(8,30,131,.9) 100%),
+      url("./assets/collage-dada-foro.jpeg");
+    background-position: 68% center;
+  }
   .hero-index { display: none; }
   .hero h1 > span:last-child, .hero-intro { padding-left: 0; margin-left: 0; }
   .section-heading { align-items: start; flex-direction: column; }
