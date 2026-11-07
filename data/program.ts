@@ -438,7 +438,7 @@ export const program: DayProgram[] = [
             presentations: [
               {
                 title: "Historia de la filosofía en el Caribe colombiano",
-                speakers: "Prof. Cristóbal Arteta Ripoll",
+                speakers: "Cristóbal Arteta Ripoll",
               },
             ],
           },
