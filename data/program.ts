@@ -54,11 +54,6 @@ const mesa8Presentations: Presentation[] = [
   },
   {
     title:
-      "Prácticas de estabilización conversacional como articulación entre sensus communis y medición comunitaria",
-    speakers: "Jhonan Jacob Ramírez Murillo",
-  },
-  {
-    title:
       "Tipología del inconsciente y fenomenología de la conciencia: tensiones ontológicas sobre la emancipación del sujeto",
     speakers: "Jhon E. Gutiérrez Cantero",
   },
@@ -72,12 +67,13 @@ const mesa8Presentations: Presentation[] = [
       "La angustia como método: el vacío kierkegaardiano en la escritura de Alejandra Pizarnik",
     speakers: "Yoaldris Inés Luna Fábregas",
   },
-  {
-    title:
-      "Crisis de identidad del sujeto en la obra La metamorfosis: alienación e intersubjetividad en Sartre",
-    speakers: "María José Jiménez Carreño",
-  },
 ];
+
+const mariaJosePresentation: Presentation = {
+  title:
+    "Crisis de identidad del sujeto en la obra La metamorfosis: alienación e intersubjetividad en Sartre",
+  speakers: "María José Jiménez Carreño",
+};
 
 const mesa9Presentations: Presentation[] = [
   {
@@ -87,7 +83,7 @@ const mesa9Presentations: Presentation[] = [
   {
     title:
       "¿Quién merece ser reconocido como humano? Dignidad y precaridad: una lectura de la película The Elephant Man desde Judith Butler y la bioética",
-    speakers: "Libni Barraza Merchán",
+    speakers: "Libni Barraza Merchán y Russell Ulloa",
   },
   {
     title: "Desdemocratización. Presentación de un problema",
@@ -132,14 +128,17 @@ const mesa9Presentations: Presentation[] = [
   },
 ];
 
-const mesa8MorningPresentations = mesa8Presentations.slice(0, 5);
+const mesa8MorningPresentations: Presentation[] = [
+  ...mesa8Presentations.slice(0, 4),
+  mariaJosePresentation,
+];
 
 const mesa8AfternoonPresentations: Presentation[] = [
   {
     title: "La modernidad o la imagen del mundo a partir de Heidegger y Habermas",
     speakers: "Luis Eugenio Ribón Pérez",
   },
-  ...mesa8Presentations.slice(5),
+  ...mesa8Presentations.slice(4),
   {
     title: "El Poder como constituens y como constitutum",
     speakers: "Steven Maestre Arango",
