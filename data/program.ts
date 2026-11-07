@@ -1,7 +1,6 @@
 export type Presentation = {
   title: string;
   speakers: string;
-  affiliation?: string;
 };
 
 export type SubEvent = {
@@ -42,15 +41,11 @@ const mesa8Presentations: Presentation[] = [
     title:
       "Identidad y libertad en la cuestión judía y palestina: una aproximación filosófica desde Jean Paul Sartre",
     speakers: "Génesis Carolina Tobías Meneses",
-    affiliation:
-      "Semillero Phronesis: Razón Práctica. Estudiante del programa de Filosofía, Universidad del Atlántico.",
   },
   {
     title:
       "Colonialismo, identidad y libertad: una aproximación filosófica desde Jean Paul Sartre y Albert Memmi",
     speakers: "Grace Wehdeking Rey",
-    affiliation:
-      "Semillero Phronesis: Razón Práctica. Estudiante del programa de Filosofía, Universidad del Atlántico.",
   },
   {
     title:
@@ -121,10 +116,6 @@ const mesa9Presentations: Presentation[] = [
     speakers: "Jairo Gutiérrez Bossa",
   },
   {
-    title: "El ser humano como demonio de la democracia",
-    speakers: "Jorge Eduardo Negrete Crisóstomo",
-  },
-  {
     title:
       "El sujeto político y los límites de la autonomía moral: religión, discursos neoreligiosos y heteronomía",
     speakers: "Santiago Orellano Fabra",
@@ -138,7 +129,24 @@ const mesa9Presentations: Presentation[] = [
     title:
       "¿Vivir para la filosofía o de la filosofía? La búsqueda de la verdad frente a la filosofía universitaria en Arthur Schopenhauer",
     speakers: "Alejandro Elías Rincón Jiménez",
-    affiliation: "Filosofía de la educación.",
+  },
+];
+
+const mesa8MorningPresentations = mesa8Presentations.slice(0, 5);
+
+const mesa8AfternoonPresentations: Presentation[] = [
+  {
+    title: "La modernidad o la imagen del mundo a partir de Heidegger y Habermas",
+    speakers: "Luis Eugenio Ribón Pérez",
+  },
+  ...mesa8Presentations.slice(5),
+  {
+    title: "El Poder como constituens y como constitutum",
+    speakers: "Steven Maestre Arango",
+  },
+  {
+    title: "Percepción, cuerpo, y carne: la deuda pendiente de Merleau Ponty consigo mismo",
+    speakers: "Julian Geronimo",
   },
 ];
 
@@ -172,20 +180,20 @@ export const program: DayProgram[] = [
             location: "Salón Múltiple 2",
             title: "Mesa Central 1",
             kind: "central",
-            moderator: "Prof. Arturo y Elianys Carolina Ramos Ramos",
+            moderator: "Arturo Alberto Cardozo Beltrán y Elianys Carolina Ramos Ramos",
             subEvents: [
               {
                 time: "08:00 – 08:30 AM",
-                text: "Palabras de apertura — Prof. Arturo y Elianys Carolina Ramos Ramos.",
+                text: "Palabras de apertura — Arturo Alberto Cardozo Beltrán y Elianys Carolina Ramos Ramos.",
               },
               {
                 time: "08:30 – 09:30 AM",
                 text:
-                  "«Existencia y cuidado del alma: Patočka —de Husserl y Heidegger—» — German Giller.",
+                  "«Existencia y cuidado del alma: Patočka —de Husserl y Heidegger—» — Germán Vargas Guillén.",
               },
               {
                 time: "09:30 – 10:30 AM",
-                text: "Luis Eduardo Gamba — título de la ponencia no indicado en el documento.",
+                text: "Luis Eduardo Gama Barbosa.",
               },
             ],
           },
@@ -224,7 +232,11 @@ export const program: DayProgram[] = [
                 title:
                   "¿Qué significa amar en tiempos de afecto artificial? Dependencia emocional, alteridad y vínculos en la sociedad contemporánea",
                 speakers: "Lauren Sofía Bohórquez Orozco",
-                affiliation: "Filosofía de la tecnología e inteligencia artificial.",
+              },
+              {
+                title:
+                  "Restos éticos de la filosofía de la educación en contextos de Inteligencia artificial Generativa.",
+                speakers: "Róger De Jesús Sepúlveda Fernández",
               },
             ],
           },
@@ -237,17 +249,6 @@ export const program: DayProgram[] = [
             moderator: "Johan Palmes",
             presentations: [
               {
-                title:
-                  "La muerte en libertad. Nietzsche frente al suicidio como afirmación y como decadencia",
-                speakers: "Sebastián Alberto Vallejos Contreras",
-                affiliation:
-                  "Estudiante del programa de Doctorado en Filosofía de la Pontificia Universidad Católica de Valparaíso.",
-              },
-              {
-                title: "Exámenes sobre la noción de Espejo en Arthur Schopenhauer",
-                speakers: "Jorge Eduardo Negrete",
-              },
-              {
                 title: "Lenguaje: ¿asesino del suicidio?",
                 speakers: "Josep Josué Orozco Suárez",
               },
@@ -255,8 +256,6 @@ export const program: DayProgram[] = [
                 title:
                   "Distopía y ontología de la imagen técnica: Orwell, Bradbury y Bazterrica a la luz del concepto de \"poetizar\" de Gustavo Bueno",
                 speakers: "Cristian David Romero Chamorro",
-                affiliation:
-                  "Estudiante de Filosofía y de Humanidades y Lengua Castellana de la Universidad del Atlántico. Miembro del Semillero Homeomerías, adscrito al Grupo de Investigación Intellectus Graecus Latinus.",
               },
               {
                 title: "Análisis del pensamiento pesimista de Emil Cioran: consideraciones sobre el suicidio",
@@ -337,11 +336,6 @@ export const program: DayProgram[] = [
                 title: "¿Puedo pertenecer sin dejar de ser yo? Identidad, autenticidad y libertad juvenil",
                 speakers: "Rafael Antonio Velandia Paez y Mariangel Monsalvo Amaris",
               },
-              {
-                title:
-                  "La violencia barrista: ¿una expresión de la naturaleza humana o el resultado de una sociedad que normaliza la deshumanización?",
-                speakers: "Andrea Carolina Quintero Ardila y Ana Sofía Rangel Lindado",
-              },
             ],
           },
           {
@@ -356,7 +350,6 @@ export const program: DayProgram[] = [
                 title:
                   "Resignificación de los imaginarios políticos de la violencia contra la mujer: consideraciones sobre el carácter performativo del discurso político de la mujer indígena Mokaná en el territorio del municipio de Galapa Atlántico",
                 speakers: "Laury Ayala Marin",
-                affiliation: "Filosofía feminista y de género.",
               },
               {
                 title: "Consideraciones acerca de la Muerte y el Reconocimiento Público desde la Poesía de Emily Dickinson",
@@ -384,49 +377,35 @@ export const program: DayProgram[] = [
               {
                 title: "Develar el Anti Humanismo: Lo Contra humano de lo Humano",
                 speakers: "Johan Camilo Méndez Moreno",
-                affiliation: "Estudiante de la Maestría en Filosofía de la Universidad del Atlántico.",
               },
               {
                 title: "Hacia una infancia mayor: elementos y mecanismo de una educación pasional",
                 speakers: "Jair España Galán",
-                affiliation:
-                  "Filósofo y doctorando en Ciencias de la Educación de la Universidad del Atlántico. Magíster en Desarrollo Humano de FLACSO, Argentina.",
-              },
-              {
-                title: "La modernidad o la imagen del mundo a partir de Heidegger y Habermas",
-                speakers: "Luis Eugenio Ribón Pérez",
-                affiliation:
-                  "Mg. en Filosofía Latinoamericana, Filosofía de la Ciencia y Teoría y Técnicas en Métodos de Investigación. Doctor en Ciencias de la Educación y en Filosofía Social.",
               },
               {
                 title:
                   "Habitar el acontecimiento: ontología del arte popular caribeño a partir de los cuadros vivos de Galeras, Sucre",
                 speakers: "Rafael David Galván Zabaleta",
-                affiliation: "Estudiante de la Maestría en Filosofía, Universidad del Atlántico.",
               },
               {
                 title: "La clase de filosofía como encuentro formativo en el aula",
                 speakers: "Omaira Barreto Chica",
-                affiliation: "Universidad del Atlántico — Maestría en Filosofía.",
               },
               {
                 title: "La negatividad del sujeto como fundamento de lo político en Žižek",
                 speakers: "David Johann Ibáñez Martínez",
               },
-              {
-                title: "El Poder como constituens y como constitutum",
-                speakers: "Steven Maestre Arango",
-              },
             ],
           },
           {
             id: "receso-dia-1-tarde",
+            time: "03:45 – 04:00 PM",
             title: "Coffee break",
             kind: "break",
           },
           {
             id: "debate-cierre-dia-1",
-            time: "04:30 – 05:30 PM",
+            time: "04:00 – 05:30 PM",
             location: "Salón Múltiple 2",
             title: "Debate de cierre: de lo eidético a la Praxis",
             kind: "central",
@@ -440,6 +419,14 @@ export const program: DayProgram[] = [
                 title: "Y sin embargo, la Filosofía no envejece.",
                 speakers: "José Gabriel Coley",
               },
+              {
+                title: "Schopenhauer para (re)pensarnos hoy",
+                speakers: "Laura Castellanos",
+              },
+              {
+                title: '"Señora, yo le digo que lo que vivimos no es ningún imaginario"',
+                speakers: "Juliana Fuquene Barreto",
+              },
             ],
           },
           {
@@ -450,7 +437,7 @@ export const program: DayProgram[] = [
             kind: "central",
             presentations: [
               {
-                title: "Presentación de libro",
+                title: "Historia de la filosofía en el Caribe colombiano",
                 speakers: "Prof. Cristóbal Arteta Ripoll",
               },
             ],
@@ -484,25 +471,23 @@ export const program: DayProgram[] = [
         items: [
           {
             id: "mesa-central-3",
-            time: "08:30 – 10:30 AM",
+            time: "08:00 – 10:20 AM",
             location: "Salón Múltiple 2",
             title: "Mesa Central 3",
             kind: "central",
-            moderator: "Elianys y Prof. Arturo",
-            note:
-              "El cuadro general indica 8:30–10:30 AM; el detalle de las intervenciones consigna actividades entre 8:00 y 10:20 AM.",
+            moderator: "Arturo Alberto Cardozo Beltrán y Elianys Carolina Ramos Ramos",
             subEvents: [
               {
-                time: "08:00 – 09:00 AM",
-                text: "Espacio libre — Arturo Cardozo.",
+                time: "08:00 – 08:30 AM",
+                text: "Espacio libre — Arturo Alberto Cardozo Beltrán.",
               },
               {
-                time: "09:00 – 09:40 AM",
-                text: "Enfermedad y transformación personal: una perspectiva fenomenológica — Andrés Contreras.",
+                time: "08:30 – 09:40 AM",
+                text: "Enfermedad y transformación personal: una perspectiva fenomenológica — Andrés F. Contreras.",
               },
               {
                 time: "09:40 – 10:20 AM",
-                text: "Contra la celeridad: una lectura desde Nietzsche y Heidegger — Alfredo Rocha.",
+                text: "Contra la celeridad: una lectura desde Nietzsche y Heidegger — Alfredo Rocha de la Torre.",
               },
             ],
           },
@@ -550,10 +535,6 @@ export const program: DayProgram[] = [
                 speakers: "Juan Manuel Hernández Aguilar",
               },
               {
-                title: "Percepción, cuerpo, y carne: la deuda pendiente de Merleau Ponty consigo mismo",
-                speakers: "Julian Geronimo",
-              },
-              {
                 title: "El valor de lo santo en la axiología de Max Scheler: universalidad y portador absoluto",
                 speakers: "Yen Lucia German Meza",
               },
@@ -566,7 +547,7 @@ export const program: DayProgram[] = [
             title: "Mesa 8: Filosofía de la Existencia y Existencialismo — mañana",
             kind: "mesa",
             moderator: "Jordan, Libni y Franco",
-            presentations: mesa8Presentations.slice(0, 5),
+            presentations: mesa8MorningPresentations,
           },
           {
             id: "mesa-9-manana",
@@ -595,7 +576,7 @@ export const program: DayProgram[] = [
             title: "Mesa 8: Filosofía de la Existencia y Existencialismo — tarde",
             kind: "mesa",
             moderator: "Jordan, Libni y Franco",
-            presentations: mesa8Presentations.slice(5),
+            presentations: mesa8AfternoonPresentations,
           },
           {
             id: "mesa-9-tarde",
@@ -613,15 +594,14 @@ export const program: DayProgram[] = [
           },
           {
             id: "obra-de-teatro",
-            time: "04:30 – 06:30 PM",
+            time: "05:00 – 06:30 PM",
             location: "Salón Múltiple 2",
-            title: "Obra de teatro",
+            title: "Las Troyanas - Repertorio II del Programa de Arte Dramático, 8.º semestre",
             kind: "closing",
-            moderator: "Elianys y Prof. Arturo",
             presentations: [
               {
-                title: "Obra de teatro",
-                speakers: "Estudiantes de Bellas Artes",
+                title: "Dirección",
+                speakers: "Mabel Pizarro",
               },
             ],
           },

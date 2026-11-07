@@ -55,7 +55,7 @@ function SessionDetails({ item }: { item: AgendaItem }) {
               <div>
                 <h4>{presentation.title}</h4>
                 <p className="speaker-name">{presentation.speakers}</p>
-                {presentation.affiliation && <p className="affiliation">{presentation.affiliation}</p>}
+                {item.kind === "mesa" && <p className="presentation-duration">Duración · 20 min</p>}
               </div>
             </li>
           ))}
