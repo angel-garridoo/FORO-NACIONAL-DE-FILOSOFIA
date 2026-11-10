@@ -4,7 +4,7 @@ export type Presentation = {
 };
 
 export type SubEvent = {
-  time: string;
+  time?: string;
   text: string;
 };
 
@@ -166,7 +166,7 @@ export const program: DayProgram[] = [
             title: "Mesa de inscripción",
             kind: "logistics",
             note:
-              "Encargados: Benjamín Martínez, Laura Marchena, Andrea García y Maria Nuñes.",
+              "Encargados: Benjamín Martínez, Laura Marchena, Andrea García y María Camila Núñez.",
           },
         ],
       },
@@ -186,12 +186,14 @@ export const program: DayProgram[] = [
                 text: "Palabras de apertura — Arturo Alberto Cardozo Beltrán y Elianys Carolina Ramos Ramos.",
               },
               {
-                time: "08:30 – 09:30 AM",
+                text:
+                  "La Razón Crítica en El Hombre del Espejo (Fenomenología en la poética Musical de Adolfo Pacheco) — Numas Armando Gil Olivera.",
+              },
+              {
                 text:
                   "«Existencia y cuidado del alma: Patočka —de Husserl y Heidegger—» — Germán Vargas Guillén.",
               },
               {
-                time: "09:30 – 10:30 AM",
                 text: "Luis Eduardo Gama Barbosa.",
               },
             ],
@@ -207,7 +209,7 @@ export const program: DayProgram[] = [
             location: "Teatrino 1",
             title: "Mesa 1: Filosofía de la Tecnología, Inteligencia Artificial y Ciencias",
             kind: "mesa",
-            moderator: "Julian Geronimo y Laura Marchera",
+            moderator: "Julián Gerónimo y Miriam Peña",
             presentations: [
               {
                 title: "El giro computacional en la Filosofía de las Ciencias siglo XXI",
@@ -245,7 +247,7 @@ export const program: DayProgram[] = [
             location: "Salón Posgrados 1",
             title: "Mesa 2: Filosofía del Suicidio, Pesimismo y Literatura",
             kind: "mesa",
-            moderator: "Johan Palmes",
+            moderator: "Johan Palmetty y Luisa Escorcia",
             presentations: [
               {
                 title: "Lenguaje: ¿asesino del suicidio?",
@@ -268,7 +270,7 @@ export const program: DayProgram[] = [
             location: "Teatrino 2",
             title: "Mesa 3: Filosofía Latinoamericana, Caribe Colombiano y Religión",
             kind: "mesa",
-            moderator: "Aldair Catalán y Brian Castro",
+            moderator: "Brian Castro y Robert Maturana",
             presentations: [
               {
                 title: "Geografías del poder: imperialismo, filosofía y territorio en América Latina",
@@ -311,7 +313,7 @@ export const program: DayProgram[] = [
             location: "Teatrino 1",
             title: "Mesa 4: Semillero Escolar",
             kind: "mesa",
-            moderator: "Natalia Torres y Maria Jimenez",
+            moderator: "Natalia Torres y María José Jiménez",
             presentations: [
               {
                 title:
@@ -343,7 +345,7 @@ export const program: DayProgram[] = [
             location: "Salón Posgrados 1",
             title: "Mesa 5: Filosofía Feminista, de Género, Arte y Estética",
             kind: "mesa",
-            moderator: "Cristian Romero y Valentina",
+            moderator: "Cristian Romero y Johana Valentina Campo",
             presentations: [
               {
                 title:
@@ -371,7 +373,7 @@ export const program: DayProgram[] = [
             location: "Salón Múltiple 2",
             title: "Mesa 6: Investigación y Maestría",
             kind: "mesa",
-            moderator: "Prof. Roger y Franco",
+            moderator: "Prof. Roger Sepúlveda y Lorena",
             presentations: [
               {
                 title: "Develar el Anti Humanismo: Lo Contra humano de lo Humano",
@@ -408,6 +410,7 @@ export const program: DayProgram[] = [
             location: "Salón Múltiple 2",
             title: "Debate de cierre: de lo eidético a la Praxis",
             kind: "central",
+            moderator: "Julián Franco, María C. Núñez y Mario Serrano",
             presentations: [
               {
                 title:
@@ -434,6 +437,7 @@ export const program: DayProgram[] = [
             location: "Salón Múltiple 2",
             title: "Mesa de cierre: Presentación de libro",
             kind: "central",
+            moderator: "Laura Marchena, Brillit Botello y Giselle Antoniotti",
             presentations: [
               {
                 title: "Historia de la filosofía en el Caribe colombiano",
@@ -461,7 +465,7 @@ export const program: DayProgram[] = [
             title: "Mesa de inscripción",
             kind: "logistics",
             note:
-              "Encargados: Benjamín Martínez, Laura Marchena, Andrea García y Maria Nuñes.",
+              "Encargados: Benjamín, Laura, Andrea y Russel.",
           },
         ],
       },
@@ -474,19 +478,21 @@ export const program: DayProgram[] = [
             location: "Salón Múltiple 2",
             title: "Mesa Central 3",
             kind: "central",
-            moderator: "Arturo Alberto Cardozo Beltrán y Elianys Carolina Ramos Ramos",
+            moderator: "Arturo, Jordan y Laura",
             subEvents: [
               {
                 time: "08:00 – 08:30 AM",
                 text: "Espacio libre — Arturo Alberto Cardozo Beltrán.",
               },
               {
-                time: "08:30 – 09:40 AM",
                 text: "Enfermedad y transformación personal: una perspectiva fenomenológica — Andrés F. Contreras.",
               },
               {
-                time: "09:40 – 10:20 AM",
                 text: "Contra la celeridad: una lectura desde Nietzsche y Heidegger — Alfredo Rocha de la Torre.",
+              },
+              {
+                text:
+                  "Cuando el esfuerzo transforma la vida cotidiana: una aproximación husserliana a la fatiga crónica — Luis Contreras.",
               },
             ],
           },
@@ -501,7 +507,7 @@ export const program: DayProgram[] = [
             location: "Salón Múltiple 2",
             title: "Mesa 7: Fenomenología y Hermenéutica",
             kind: "mesa",
-            moderator: "Mirian, Brinigt y Gissel",
+            moderator: "Brillit, Gisselle y Robert",
             presentations: [
               {
                 title: "¿Es posible una fenomenología de las no-cosas?",
@@ -545,7 +551,7 @@ export const program: DayProgram[] = [
             location: "Teatrino 2",
             title: "Mesa 8: Filosofía de la Existencia y Existencialismo — mañana",
             kind: "mesa",
-            moderator: "Jordan, Libni y Franco",
+            moderator: "Franco y Laura",
             presentations: mesa8MorningPresentations,
           },
           {
@@ -554,7 +560,7 @@ export const program: DayProgram[] = [
             location: "Teatrino 1",
             title: "Mesa 9: Política, Ética y Filosofía de la Educación — mañana",
             kind: "mesa",
-            moderator: "Aldair Catalán y Brian Castro",
+            moderator: "Rener Osorio y Luis Escalante",
             presentations: mesa9Presentations.slice(0, 6),
           },
           {
@@ -574,7 +580,7 @@ export const program: DayProgram[] = [
             location: "Teatrino 1",
             title: "Mesa 8: Filosofía de la Existencia y Existencialismo — tarde",
             kind: "mesa",
-            moderator: "Jordan, Libni y Franco",
+            moderator: "Cristian Romero y Russel",
             presentations: mesa8AfternoonPresentations,
           },
           {
@@ -583,7 +589,7 @@ export const program: DayProgram[] = [
             location: "Teatrino 2",
             title: "Mesa 9: Política, Ética y Filosofía de la Educación — tarde",
             kind: "mesa",
-            moderator: "Andrea García, Rober y Russel",
+            moderator: "Andrea García y Libni",
             presentations: mesa9Presentations.slice(6),
           },
           {

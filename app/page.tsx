@@ -38,9 +38,9 @@ function SessionDetails({ item }: { item: AgendaItem }) {
 
       {item.subEvents && (
         <ol className="subevents">
-          {item.subEvents.map((subEvent) => (
-            <li key={`${item.id}-${subEvent.time}`}>
-              <time>{subEvent.time}</time>
+          {item.subEvents.map((subEvent, index) => (
+            <li key={`${item.id}-${index}`} className={subEvent.time ? undefined : "subevent--untimed"}>
+              {subEvent.time && <time>{subEvent.time}</time>}
               <p>{subEvent.text}</p>
             </li>
           ))}
