@@ -247,7 +247,7 @@ export const program: DayProgram[] = [
             location: "Salón Posgrados 1",
             title: "Mesa 2: Filosofía del Suicidio, Pesimismo y Literatura",
             kind: "mesa",
-            moderator: "Johan Palmetty y Luisa Escorcia",
+            moderator: "Johan Palmett y Luisa Escorcia",
             presentations: [
               {
                 title: "Lenguaje: ¿asesino del suicidio?",
