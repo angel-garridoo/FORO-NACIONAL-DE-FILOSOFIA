@@ -128,6 +128,15 @@ const mesa9Presentations: Presentation[] = [
   },
 ];
 
+const mesa9AfternoonPresentations: Presentation[] = [
+  {
+    title:
+      "«El Spinoza de Hegel en la Ciencia de la Lógica como condición de recepción del “Omnis enim negatio determinatio” de Marx (1841)»",
+    speakers: "Miguel Camilo Espinosa Ardila",
+  },
+  ...mesa9Presentations.slice(6),
+];
+
 const mesa8MorningPresentations: Presentation[] = [
   ...mesa8Presentations.slice(0, 4),
   mariaJosePresentation,
@@ -270,7 +279,7 @@ export const program: DayProgram[] = [
             location: "Teatrino 2",
             title: "Mesa 3: Filosofía Latinoamericana, Caribe Colombiano y Religión",
             kind: "mesa",
-            moderator: "Brian Castro y Robert Maturana",
+            moderator: "María Mercedes y Robert Maturana",
             presentations: [
               {
                 title: "Geografías del poder: imperialismo, filosofía y territorio en América Latina",
@@ -373,7 +382,7 @@ export const program: DayProgram[] = [
             location: "Salón Múltiple 2",
             title: "Mesa 6: Investigación y Maestría",
             kind: "mesa",
-            moderator: "Prof. Roger Sepúlveda y Lorena",
+            moderator: "Prof. Roger Sepúlveda y Russel Ulloa",
             presentations: [
               {
                 title: "Develar el Anti Humanismo: Lo Contra humano de lo Humano",
@@ -551,7 +560,7 @@ export const program: DayProgram[] = [
             location: "Teatrino 2",
             title: "Mesa 8: Filosofía de la Existencia y Existencialismo — mañana",
             kind: "mesa",
-            moderator: "Franco y Laura",
+            moderator: "Julián Franco y Laura Marchena",
             presentations: mesa8MorningPresentations,
           },
           {
@@ -580,7 +589,7 @@ export const program: DayProgram[] = [
             location: "Teatrino 1",
             title: "Mesa 8: Filosofía de la Existencia y Existencialismo — tarde",
             kind: "mesa",
-            moderator: "Cristian Romero y Russel",
+            moderator: "Cristian Romero y Russel Ulloa",
             presentations: mesa8AfternoonPresentations,
           },
           {
@@ -589,8 +598,8 @@ export const program: DayProgram[] = [
             location: "Teatrino 2",
             title: "Mesa 9: Política, Ética y Filosofía de la Educación — tarde",
             kind: "mesa",
-            moderator: "Andrea García y Libni",
-            presentations: mesa9Presentations.slice(6),
+            moderator: "Andrea García y Libni Barraza",
+            presentations: mesa9AfternoonPresentations,
           },
           {
             id: "receso-dia-2-tarde",
