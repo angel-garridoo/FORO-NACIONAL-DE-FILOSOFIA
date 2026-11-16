@@ -203,14 +203,14 @@ export const program: DayProgram[] = [
               },
               {
                 text:
-                  "La Razón Crítica en El Hombre del Espejo (Fenomenología en la poética Musical de Adolfo Pacheco) — Numas Armando Gil Olivera.",
-              },
-              {
-                text:
                   "«Existencia y cuidado del alma: Patočka —de Husserl y Heidegger—» — Germán Vargas Guillén.",
               },
               {
                 text: "«El fundamento filosófico de la Justicia Transicional. La ontología hermenéutica de la justicia» — Luis Eduardo Gama Barbosa.",
+              },
+              {
+                text:
+                  "La Razón Crítica en El Hombre del Espejo (Fenomenología en la poética Musical de Adolfo Pacheco) — Numas Armando Gil Olivera.",
               },
             ],
           },
