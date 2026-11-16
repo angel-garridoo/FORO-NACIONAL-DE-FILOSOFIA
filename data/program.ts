@@ -497,10 +497,6 @@ export const program: DayProgram[] = [
             moderator: "Arturo, Jordan y Laura",
             subEvents: [
               {
-                time: "08:00 – 08:30 AM",
-                text: "Espacio libre — Arturo Alberto Cardozo Beltrán.",
-              },
-              {
                 text: "Enfermedad y transformación personal: una perspectiva fenomenológica — Andrés F. Contreras.",
               },
               {
