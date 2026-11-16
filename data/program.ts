@@ -6,6 +6,7 @@ export type Presentation = {
 export type SubEvent = {
   time?: string;
   text: string;
+  details?: string[];
 };
 
 export type AgendaItem = {
@@ -192,7 +193,13 @@ export const program: DayProgram[] = [
             subEvents: [
               {
                 time: "08:00 – 08:30 AM",
-                text: "Palabras de apertura — Arturo Alberto Cardozo Beltrán y Elianys Carolina Ramos Ramos.",
+                text: "Palabras de apertura",
+                details: [
+                  "Palabras de la Decana de la Facultad de Ciencias Humanas MURIEL JIMÉNEZ ORTEGA.",
+                  "Palabras del Coordinador Numas Armando Gil.",
+                  "Saludo de Pedro Blanco Garzon, nieto de Julio Enrique Blanco, fundador de la Universidad del Atlántico.",
+                  "Palabras de bienvenida Arturo Cardozo y Elianys Carolina Ramos Ramos.",
+                ],
               },
               {
                 text:
@@ -203,7 +210,7 @@ export const program: DayProgram[] = [
                   "«Existencia y cuidado del alma: Patočka —de Husserl y Heidegger—» — Germán Vargas Guillén.",
               },
               {
-                text: "Luis Eduardo Gama Barbosa.",
+                text: "«El fundamento filosófico de la Justicia Transicional. La ontología hermenéutica de la justicia» — Luis Eduardo Gama Barbosa.",
               },
             ],
           },

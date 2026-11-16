@@ -41,7 +41,16 @@ function SessionDetails({ item }: { item: AgendaItem }) {
           {item.subEvents.map((subEvent, index) => (
             <li key={`${item.id}-${index}`} className={subEvent.time ? undefined : "subevent--untimed"}>
               {subEvent.time && <time>{subEvent.time}</time>}
-              <p>{subEvent.text}</p>
+              <div>
+                <p>{subEvent.text}</p>
+                {subEvent.details && (
+                  <ul className="subevent-details">
+                    {subEvent.details.map((detail) => (
+                      <li key={detail}>{detail}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </li>
           ))}
         </ol>
